@@ -1,9 +1,17 @@
+import {ref} from "#imports"
 import {useCookie, useState} from "nuxt/app";
 
 export function useAuth() {
     const key = "isAuthenticated";
-    const cookie = useCookie(key, {default: () => false})
-    const isAuthenticated = useState(key, () => cookie)
+    let isAuthenticated
+    let cookie
+    try {
+        cookie = useCookie(key, {default: () => false})
+        isAuthenticated = useState(key, () => cookie)
+    } catch (err) {
+        cookie = ref(false)
+        isAuthenticated = useState(key, () => ref(false))
+    }
 
     function signIn() {
         cookie.value = true;

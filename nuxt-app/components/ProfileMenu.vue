@@ -9,7 +9,7 @@ const router = useRouter()
 
 function handleSignOut() {
   signOut()
-  router.push({path: "/auth/sign-in"})
+  router.push({path: "/"})
 }
 </script>
 

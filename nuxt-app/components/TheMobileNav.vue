@@ -67,7 +67,7 @@ const showMobileNav = inject("showMobileNav")
                 <a v-for="item in navigation" :key="item.name" :href="item.href"
                    :class="[item.current ? 'bg-cyan-800 text-white' : 'text-cyan-100 hover:text-white hover:bg-cyan-600', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']"
                    :aria-current="item.current ? 'page' : undefined">
-                  <component :is="item.icon" class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200" aria-hidden="true"/>
+                  <component :is="item.icon || 'div'" class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200" aria-hidden="true"/>
                   {{ item.name }}
                 </a>
               </div>
@@ -75,7 +75,7 @@ const showMobileNav = inject("showMobileNav")
                 <div class="px-2 space-y-1">
                   <a v-for="item in secondaryNavigation" :key="item.name" :href="item.href"
                      class="group flex items-center px-2 py-2 text-base font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600">
-                    <component :is="item.icon" class="mr-4 h-6 w-6 text-cyan-200" aria-hidden="true"/>
+                    <component :is="item.icon || 'div'" class="mr-4 h-6 w-6 text-cyan-200" aria-hidden="true"/>
                     {{ item.name }}
                   </a>
                 </div>

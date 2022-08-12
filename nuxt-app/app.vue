@@ -8,7 +8,7 @@ import {useAuth} from "./composables/auth";
 
 const route = useRoute()
 const bgClass = computed(() =>
-    route.path === "/auth/sign-in"
+    route.path === "/"
         ? "bg-gradient-to-tr from-gray-100 to-cyan-600"
         : "bg-gray-100")
 
@@ -23,7 +23,6 @@ watchEffect(() => {
     }
   })
 })
-
 
 const showMobileNav = ref(false)
 provide("showMobileNav", showMobileNav)

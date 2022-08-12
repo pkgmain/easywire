@@ -6,6 +6,8 @@ export default defineNuxtConfig({
         "@nuxtjs/tailwindcss",
     ],
     build: {
-        transpile: ["@heroicons/vue"]
+        transpile: [
+            "@heroicons/vue",
+        ]
     }
 })

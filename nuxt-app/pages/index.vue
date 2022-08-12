@@ -1,12 +1,9 @@
 <script setup>
 import {useRouter} from "nuxt/app";
-import {useAuth} from "../composables/auth";
 
-const {signIn} = useAuth()
 const router = useRouter();
 
 function handleSignIn() {
-  signIn();
   router.push({path: "/dashboard"});
 }
 </script>

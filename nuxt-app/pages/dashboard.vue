@@ -1,8 +1,7 @@
 <script setup>
 import ProfileHeader from "../components/ProfileHeader.vue";
 import RecentActivity from "../components/RecentActivity.vue";
-import AccountOverview from "../components/AccountOverview.vue";
-</script>
+import AccountOverview from "../components/AccountOverview.vue";</script>
 
 <template>
   <div>

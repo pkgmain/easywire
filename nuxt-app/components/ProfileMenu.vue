@@ -2,13 +2,10 @@
 import {ChevronDownIcon} from "@heroicons/vue/solid"
 import {Menu, MenuButton, MenuItem, MenuItems} from "@headlessui/vue";
 import {useRouter} from "nuxt/app";
-import {useAuth} from "../composables/auth";
 
-const {signOut} = useAuth()
 const router = useRouter()
 
 function handleSignOut() {
-  signOut()
   router.push({path: "/"})
 }
 </script>

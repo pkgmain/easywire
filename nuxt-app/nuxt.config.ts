@@ -4,13 +4,8 @@ import {defineNuxtConfig} from "nuxt"
 export default defineNuxtConfig({
     modules: [
         "@nuxtjs/tailwindcss",
-        async (inlineOptions, nuxt) => {
-            nuxt.hook('components:dirs', (dirs) => {
-                dirs.push("~/node_modules/@heroicons/vue/outline")
-                dirs.push("~/node_modules/@heroicons/vue/solid")
-                dirs.push("~/node_modules/@headlessui/vue/dist/components")
-            });
-        },
     ],
-
+    build: {
+        transpile: ["@heroicons/vue"]
+    }
 })

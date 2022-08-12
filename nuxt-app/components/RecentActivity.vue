@@ -13,10 +13,15 @@ const {data: transactions, pending} = useLazyFetch("/api/transactions", {server:
 </script>
 
 <template>
-    <h2 class="inline-flex space-x-4 max-w-6xl mx-auto mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8">
-      <span>Recent activity</span>
-      <LoadingSpinner :loading="pending" class="h-5 w-5 text-cyan-600"/>
-    </h2>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+    <div class="flex items-center space-x-4">
+      <h2 class="text-lg leading-6 font-medium text-gray-900">
+        Recent activity
+      </h2>
+
+      <LoadingSpinner :loading="pending" class="h-6 w-6 text-cyan-600"/>
+    </div>
+  </div>
 
   <!--  MOBILE-->
   <template v-if="!pending">

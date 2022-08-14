@@ -30,7 +30,3 @@ defineProps({card: {type: Object, required: true}})
     </div>
   </div>
 </template>
-
-<style scoped>
-
-</style>

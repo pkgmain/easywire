@@ -31,21 +31,15 @@ const {isAuthenticated} = useAuth()
 </script>
 
 <template>
-  <div class="min-h-full flex flex-col justify-center">
+  <div class="min-h-full">
     <TheMobileNav v-if="isAuthenticated"/>
     <TheDesktopNav v-if="isAuthenticated"/>
 
-    <div class="min-h-full" :class="{'lg:pl-64': isAuthenticated}">
+    <div class="flex flex-col flex-1" :class="{'lg:pl-64': isAuthenticated}">
       <SearchBar v-if="isAuthenticated"/>
-      <main class="flex-1 pb-8 min-h-full my-auto">
+      <main class="flex-1" :class="{'pb-8': $route.path !== '/'}">
         <NuxtPage/>
       </main>
     </div>
   </div>
 </template>
-
-<style>
-#__nuxt {
-  @apply h-full
-}
-</style>
